@@ -1,0 +1,71 @@
+{
+    "header": {
+      "title": "ByeWind"
+    },
+    "sections": [
+      {
+        "title": "Favorites",
+        "items": [
+          "Overview",
+          "Projects"
+        ]
+      },
+      {
+        "title": "Dashboards",
+        "items": [
+          {
+            "name": "Default",
+            "icon": "default",
+            "route":"/dashboard"
+          },
+          {
+            "name": "eCommerce",
+            "icon": "ecommerce",
+            "route":"/order-history"
+
+          },
+          {
+            "name": "Projects",
+            "icon": "projects"
+          },
+          {
+            "name": "Online Courses",
+            "icon": "ecourses"
+          }
+        ]
+      },
+      {
+        "title": "Pages",
+        "items": [
+          {
+            "name": "User Profile",
+            "icon": "userProfile",
+            "subItems": [
+              "Overview",
+              "Projects",
+              "Campaigns",
+              "Documents",
+              "Followers"
+            ]
+          },
+          {
+            "name": "Account",
+            "icon": "account"
+          },
+          {
+            "name": "Corporate",
+            "icon": "corporate"
+          },
+          {
+            "name": "Blog",
+            "icon": "blog"
+          },
+          {
+            "name": "Social",
+            "icon": "social"
+          }
+        ]
+      }
+    ]
+  }
+  
