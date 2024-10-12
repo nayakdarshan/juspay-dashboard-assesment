@@ -34,7 +34,7 @@ function LeftSidebar({ sidebarData }) {
   };
 
   return (
-    <div className={`h-screen w-64 md:w-72 lg:w-60 p-4 border-r ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
+    <div className={`h-screen w-64 md:w-72 lg:w-60 p-4 border-r overflow-y-auto ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
       {/* Sidebar Header */}
       <div className="flex items-center pb-4 mb-4">
         <img src={avatar} alt="Avatar" className="w-10 h-10 rounded-full mr-2" />
