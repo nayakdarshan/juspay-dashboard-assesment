@@ -32,7 +32,7 @@ Welcome to the **Dashboard Project**! This project provides a modern dashboard i
 
 ## 🚀 Deployment
 
-The project is deployed on [Vercel](https://vercel.com) with CI/CD setup for seamless updates. The link to the live dashboard will be added later.
+The project is deployed on Vercel [Click here for Live Demo](https://juspay-dashboard-assesment.vercel.app/dashboard) with CI/CD setup for seamless updates. The link to the live dashboard will be added later.
 
 ## 📜 Documentation
 
