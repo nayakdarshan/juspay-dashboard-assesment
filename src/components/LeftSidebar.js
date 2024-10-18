@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
-import avatar from '../assets/icons/avatar.png';
+import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../ThemeProvider';
 import { useNavigate } from 'react-router-dom';
-
+import avatar from '../assets/icons/avatar.png';
 const iconMapping = {
   account: require('../assets/icons/account.png'),
   notification: require('../assets/icons/notification.png'),
@@ -17,8 +16,7 @@ const iconMapping = {
   openDropdown: require('../assets/icons/open-dropdown.png'),
   closeDropdown: require('../assets/icons/close-dropdown.png'),
 };
-
-function LeftSidebar({ sidebarData }) {
+function LeftSidebar({ sidebarData = { sections: [] } }) {
   const { isDarkTheme } = useContext(ThemeContext);
   const [dashboardOpen, setDashboardOpen] = useState(true);
   const [pagesOpen, setPagesOpen] = useState(true);
@@ -34,7 +32,7 @@ function LeftSidebar({ sidebarData }) {
   };
 
   return (
-    <div className={`h-screen w-64 md:w-72 lg:w-60 p-4 border-r overflow-y-auto ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
+    <div className={`left-sidebar h-screen sm:w-screen xs:w-screen md:w-72 lg:w-60 p-4 border-r overflow-y-auto ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
       {/* Sidebar Header */}
       <div className="flex items-center pb-4 mb-4">
         <img src={avatar} alt="Avatar" className="w-10 h-10 rounded-full mr-2" />
@@ -52,7 +50,7 @@ function LeftSidebar({ sidebarData }) {
           </h4>
         </span>
         <ul className="pl-4 mt-2">
-          {sidebarData.sections[0].items.map((item, itemIndex) => (
+          {sidebarData.sections[0]?.items.map((item, itemIndex) => (
             <li
               key={itemIndex}
               className={`cursor-pointer pl-2 rounded-lg py-2 ${isDarkTheme ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:bg-gray-200'}`}
@@ -76,14 +74,17 @@ function LeftSidebar({ sidebarData }) {
           />
           Dashboards
         </h4>
-        <ul className={`pl-4 mt-2 ${!dashboardOpen ? 'hidden' : ''}`}>
-          {sidebarData.sections[1].items.map((item, itemIndex) => {
+        <ul
+          className={`pl-4 mt-2 transition-all duration-300 ease-in-out overflow-hidden ${dashboardOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+          style={{ transitionProperty: 'max-height, opacity' }}
+        >
+          {sidebarData.sections[1]?.items.map((item, itemIndex) => {
             const iconPath = item.icon ? require(`../assets/icons/${item.icon}.png`) : null;
 
             return (
               <li
                 key={itemIndex}
-                onClick={() => handleItemClick(item.route)} // Call handleItemClick with route
+                onClick={() => handleItemClick(item.route)}
                 className={`flex items-center cursor-pointer pl-2 rounded-lg py-2 ${isDarkTheme ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:bg-gray-200'}`}
               >
                 {iconPath && <img src={iconPath} alt={item.name} className={`mr-2 w-4 h-4 ${isDarkTheme ? 'filter invert' : ''}`} />}
@@ -107,8 +108,11 @@ function LeftSidebar({ sidebarData }) {
           />
           Pages
         </h4>
-        <ul className={`pl-4 mt-2 ${!pagesOpen ? 'hidden' : ''}`}>
-          {sidebarData.sections[2].items.map((item, itemIndex) => {
+        <ul
+          className={`pl-4 mt-2 transition-all duration-300 ease-in-out overflow-hidden ${pagesOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+          style={{ transitionProperty: 'max-height, opacity' }}
+        >
+          {sidebarData.sections[2]?.items.map((item, itemIndex) => {
             const iconPath = item.icon ? require(`../assets/icons/${item.icon}.png`) : null;
 
             return (

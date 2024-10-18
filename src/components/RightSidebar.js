@@ -19,7 +19,7 @@ const RightSidebar = ({ rightSidebarData }) => {
   };
 
   return (
-    <div className={`w-64 md:w-72 lg:w-80 p-4 border-l h-screen overflow-y-auto ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
+    <div className={`right-sidebar sm:w-64 md:w-72 lg:w-80 p-4 border-l h-screen overflow-y-auto ${isDarkTheme ? 'bg-[#1C1C1C] border-gray-700' : 'bg-white border-gray-200'}`}>
       {/* Notifications */}
       <div className="mb-4">
         <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-800'} mb-4`}>Notifications</h4>
@@ -51,10 +51,6 @@ const RightSidebar = ({ rightSidebarData }) => {
                 <p className={`text-sm font-medium truncate ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>{activity.text}</p>
                 <span className={`text-xs ${isDarkTheme ? 'text-gray-400' : 'text-gray-500'}`}>{activity.time}</span>
               </div>
-              {/* Uncomment for lin between profile pic
-              {index < rightSidebarData.activities.length - 1 && (
-                <div className="activity-line" />
-              )} */}
             </div>
           ))}
         </div>

@@ -152,11 +152,11 @@ function Ecommerce() {
   
   return (
     <>
-      <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>eCommerce</h4>
-      <div className={`flex flex-col lg:flex-row gap-4 p-6 ${isDarkTheme ? 'bg-[#1C1C1C]' : 'bg-white'}`}>
+      <h4 className={`text-lg md:text-xl lg:text-2xl mb-2 font-semibold ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>eCommerce</h4>
+      <div className={`flex flex-col xl:flex-row gap-4 sm:p-2 md:p-4 lg:p-6 ${isDarkTheme ? 'bg-[#1C1C1C]' : 'bg-white'}`}>
         
         {/* First Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 flex-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 xl:w-1/2">
           {ecommerceData.cards && ecommerceData.cards.length > 0 ? (
             ecommerceData.cards.map((card, index) => {
               const isSameColor = card.lightThemeCardBg === card.darkThemeCardBg;
@@ -172,12 +172,12 @@ function Ecommerce() {
                     borderRadius: '16px',
                   }}
                 >
-                  <div className={`text-dark text-lg font-semibold ${textColor}`}>
+                  <div className={`text-dark sm:mb-2 md:mb-2 lg:mb-2 xl:mb-2 text-lg font-semibold ${textColor}`}>
                     {card.title}
                   </div>
                   <div className="flex-grow"></div>
-                  <div className="flex items-center justify-between mt-2">
-                    <div className={`text-3xl font-bold ${textColor}`}>
+                  <div className="lg:flex items-center justify-between mt-2">
+                    <div className={`text-3xl sm:mb-2 md:mb-2 lg:mb-2 xl:mb-2 font-bold ${textColor}`}>
                       {card.count}
                     </div>
                     <div className="flex items-center space-x-2 text-black-500 text-sm">
@@ -200,7 +200,7 @@ function Ecommerce() {
         </div>
 
         <div
-          className={`lg:w-1/2 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`}
+          className={`xl:w-1/2 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`}
           style={{ borderRadius: '16px' }}
         >
           <div className={`text-dark text-lg font-semibold mb-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
@@ -214,10 +214,10 @@ function Ecommerce() {
       </div>
 
      {/* Second Row */}
-<div className="flex flex-col lg:flex-row gap-4 p-6">
-  <div className={`lg:w-4/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
-    <div className={`text-lg font-semibold mb-4 flex gap-4 items-center ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
-        <span className='border-r-2 pr-2'>Revenue</span>
+<div className="flex flex-col xl:flex-row gap-4 py-4 sm:p-2 md:p-4 lg:p-6">
+  <div className={`xl:w-4/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
+    <div className={`text-lg font-semibold mb-4 2xl:flex gap-4 items-center ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
+        <span className='2xl:border-r-2 pr-2'>Revenue</span>
         <span className={`text-sm flex items-center gap-2 ${isDarkTheme ? 'text-white-400' : 'text-black-500'}`}> 
             <div style={{ width: '10px', height: '10px', backgroundColor: '#000000', borderRadius: '50%' }}></div>
             Current Week 
@@ -269,7 +269,7 @@ function Ecommerce() {
       ))}
     </ComposableMap>
   </div> */}
-   <div className={`lg:w-2/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
+   <div className={`xl:w-2/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
   <div className={`text-lg font-semibold mb-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
     Revenue by Location
   </div>
@@ -309,11 +309,12 @@ function Ecommerce() {
 
 
       {/* Third Row */}
-      <div className="flex flex-col lg:flex-row gap-4 p-6">
-      <div className={`lg:w-5/6 p-6 flex flex-col ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
+      <div className="flex flex-col lg:flex-row gap-4 py-4 sm:p-2 md:p-4 lg:p-6 mb-4">
+      <div className={`xl:w-5/6 p-6 flex flex-col overflow-hidden ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
   <div className={`text-lg font-semibold mb-5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
     Top Selling Products
   </div>
+  <div className='overflow-x-auto'>
   <table className={`min-w-full mt-5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
     <thead>
       <tr className='border-b'>
@@ -335,10 +336,11 @@ function Ecommerce() {
       ))}
     </tbody>
   </table>
+  </div>
 </div>
 
 
-        <div className={`lg:w-2/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
+        <div className={`xl:w-2/6 p-6 flex flex-col justify-between ${isDarkTheme ? 'bg-[#282828]' : 'bg-gray-100'}`} style={{ borderRadius: '16px' }}>
           <div className={`text-lg font-semibold mb-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-800'}`}>
             Total Sales Breakdown
           </div>
